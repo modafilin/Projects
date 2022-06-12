@@ -15,7 +15,7 @@ int main(void)
         {
             if (numbers[i] > numbers[i+1])
             {
-                numbers[i], numbers[i+1] = swap(numbers[i], numbers[i+1]); // Trying to return and swap both values from the swap function
+                numbers[i], numbers[i+1] = swap(numbers[i], numbers[i+1]); // Returning and swaping both values from the swap function
                 counter += 1;
             }
         }
