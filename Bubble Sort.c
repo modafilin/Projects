@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int swap(int x, int y);
+void swap(int *x, int *y);
 int numbers[] = {6,2,4,7,1,3,8,5,9};
 
 int main(void)
@@ -15,7 +15,7 @@ int main(void)
         {
             if (numbers[i] > numbers[i+1])
             {
-                numbers[i], numbers[i+1] = swap(numbers[i], numbers[i+1]); // Trying to return and swap both values from the swap function
+                swap(&numbers[i], &numbers[i+1]);
                 counter += 1;
             }
         }
@@ -24,21 +24,14 @@ int main(void)
     }
     for (int j = 0; j < 9; j++)
     {
-        if (j == 8)
-        {
-            printf("%i.\n", numbers[j]);
-        }
-        else
-        {
-            printf("%i, ", numbers[j]);
-        }
+        (j == 8) ? (printf("%i.\n", numbers[j])) : (printf("%i, ", numbers[j]));
     }
 }
 
-int swap(int x, int y)
+void swap(int *x, int *y)
 {
-    int temp = x;
-    x = y;
-    y = temp;
-    return x, y;
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+
 }
